@@ -1,26 +1,205 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Brand Colors - Luminous Indigo (#6366f1 - Indigo-500) */
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-light: #e0e7ff;
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #172554;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Neutral Colors - Slate */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-success-bg: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-bg: #fee2e2;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+  --color-info-bg: #dbeafe;
+
+  /* Surface & Background Colors (Light Mode) */
+  --background: #f8fafc;
+  --background-light: #f3f4f6;
+  --surface: #ffffff;
+  --surface-light: #ffffff;
+  --surface-card: #ffffff;
+
+  /* Text Colors (Light Mode) */
+  --foreground: #1f2937;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-light: #1f2937;
+  --color-text-secondary-light: #6b7280;
+
+  /* Border Colors */
+  --color-border: #e2e8f0;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 15px -3px rgba(99, 102, 241, 0.4);
+  --shadow-glow-brand: 0 0 80px -20px rgba(99, 102, 241, 0.3);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Surface & Background Colors (Dark Mode) */
+    --background: #0f1115;
+    --background-dark: #0f1115;
+    --surface: #1a1d23;
+    --surface-dark: #1a1d23;
+    --surface-card: #1a1d23;
+
+    /* Text Colors (Dark Mode) */
+    --foreground: #f3f4f6;
+    --color-text-primary: #f3f4f6;
+    --color-text-secondary: #9ca3af;
+    --color-text-dark: #f3f4f6;
+    --color-text-secondary-dark: #9ca3af;
+
+    /* Border Colors (Dark Mode) */
+    --color-border: #374151;
   }
+}
+
+@theme inline {
+  /* Tailwind CSS v4 Theme Configuration */
+
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+
+  /* Indigo Scale */
+  --color-indigo-50: var(--color-primary-50);
+  --color-indigo-100: var(--color-primary-100);
+  --color-indigo-200: var(--color-primary-200);
+  --color-indigo-300: var(--color-primary-300);
+  --color-indigo-400: var(--color-primary-400);
+  --color-indigo-500: var(--color-primary-500);
+  --color-indigo-600: var(--color-primary-600);
+  --color-indigo-700: var(--color-primary-700);
+  --color-indigo-800: var(--color-primary-800);
+  --color-indigo-900: var(--color-primary-900);
+
+  /* Slate Scale */
+  --color-slate-50: var(--color-slate-50);
+  --color-slate-100: var(--color-slate-100);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-300: var(--color-slate-300);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-500: var(--color-slate-500);
+  --color-slate-600: var(--color-slate-600);
+  --color-slate-700: var(--color-slate-700);
+  --color-slate-800: var(--color-slate-800);
+  --color-slate-900: var(--color-slate-900);
+
+  /* Semantic Colors */
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-danger: var(--color-danger);
+  --color-info: var(--color-info);
+
+  /* Typography */
+  --font-sans: var(--font-geist-sans), Inter, sans-serif;
+  --font-mono: var(--font-geist-mono), "Fira Code", monospace;
+  --font-display: var(--font-geist-sans), Inter, sans-serif;
+  --font-body: var(--font-geist-sans), Inter, sans-serif;
+
+  /* Spacing (additional) */
+  --spacing-4-5: 1.125rem;
+  --spacing-18: 4.5rem;
+  --spacing-112: 28rem;
+  --spacing-128: 32rem;
+
+  /* Border Radius */
+  --radius-soft: 0.5rem;
+  --radius-card: 2rem;
+  --radius-large: 1.5rem;
+
+  /* Box Shadows */
+  --shadow-soft: var(--shadow-soft);
+  --shadow-glow: var(--shadow-glow);
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Utility Classes */
+.grid-bg-pattern {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-bg-pattern {
+    background-image: radial-gradient(#374151 1px, transparent 1px);
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-slate-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: var(--color-slate-800);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-500);
 }
