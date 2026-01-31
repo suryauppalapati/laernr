@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
   "editor.formatOnSave": true,
-  "prettier.printWidth": 40,
+  "prettier.printWidth": 80,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports": "explicit"
@@ -28,7 +28,7 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
-    "**/.gitignore": true,
+    "**/.gitignore": false,
     "**/node_modules": true,
     "**/.prettierignore": true,
     "**/.prettierrc": true,
