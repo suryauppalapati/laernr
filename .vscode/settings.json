@@ -29,11 +29,11 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
     "**/.gitignore": false,
-    "**/node_modules": true,
-    "**/.prettierignore": true,
-    "**/.prettierrc": true,
-    "**/.next": true,
-    "**/next-env.d.ts": true,
-    "**/README.md": true
+    "**/node_modules": false,
+    "**/.prettierignore": false,
+    "**/.prettierrc": false,
+    "**/.next": false,
+    "**/next-env.d.ts": false,
+    "**/README.md": false
   }
 }
